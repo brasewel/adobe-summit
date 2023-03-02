@@ -13,7 +13,7 @@ https://developer.adobe.com/graphql-mesh-gateway/gateway/create-mesh/#create-a-p
 ## Add a workspace to your project
 https://developer.adobe.com/graphql-mesh-gateway/gateway/create-mesh/#add-a-workspace-to-your-project
 
-## Create a mesh
+## Mesh Commands - Create
 https://developer.adobe.com/graphql-mesh-gateway/gateway/create-mesh/#create-a-mesh-1
 
 ## Access the gateway
