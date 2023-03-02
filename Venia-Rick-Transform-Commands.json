@@ -9,13 +9,13 @@
             name
             sku
             url_key
+            }
         }
-    }
-    episodes {
-        results {
-            name
-            episode
-            air_date
+    EPISODES {
+        RESULTS {
+            NAME
+            EPISODE
+            AIR_DATE
         }
     }
 }
