@@ -1,0 +1,22 @@
+{
+  "meshConfig": {
+    "sources": [
+      {
+        "name": "Commerce",
+        "handler": {
+          "graphql": {
+            "endpoint": "https://venia.magento.com/graphql/"
+          }
+        }
+      },
+      {
+        "name": "RickMorty",
+        "handler": {
+          "graphql": {
+            "endpoint": "https://rickandmortyapi.com/graphql"
+          }
+        }
+      }
+    ]
+  }
+}

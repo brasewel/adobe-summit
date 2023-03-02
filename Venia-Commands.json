@@ -1,0 +1,11 @@
+{
+  products(search: "a", pageSize: 3, currentPage: 1) {
+    items {
+      uid
+      name
+      sku
+      url_key
+    }
+  }
+}
+
