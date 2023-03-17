@@ -1,28 +1,66 @@
 {
   "meshConfig": {
-    "sources": [
+    "sources": [{
+        "name": "CommerceREST",
+        "handler": {
+          "openapi": {
+            "source": "https://accenturetest.magento.com/rest/all/schema?services=all"
+          }
+        },
+        "transforms": [
+          {
+            "rename": {
+              "renames": [
+                {
+                  "from": {
+                    "type": "Query",
+                    "field": "GetV1DirectoryCurrency"
+                  },
+                  "to": {
+                    "type": "Query",
+                    "field": "currencyDirectory"
+                  }
+                },
+                {
+                  "from": {
+                    "type": "GetV1DirectoryCurrency_response"
+                  },
+                  "to": {
+                    "type": "currencyDirectoryResponse"
+                  }
+                }
+              ]
+            }
+          }
+        ]
+      },
       {
-        "name": "Venia",
+        "name": "CommerceCoreGraph",
         "handler": {
           "graphql": {
             "endpoint": "https://venia.magento.com/graphql"
           }
-        }
-      },
-      {
-        "name": "RickMorty",
-        "transforms": [
-          {
-            "namingConvention": {
-              "fieldNames": "upperCase"
-            }
+        },
+        "transforms": [{
+          "filterSchema": {
+            "mode": "bare",
+            "filters": [
+              "Query.!category",
+              "Query.!customerOrders",
+              "Query.!urlResolver",
+              "Query.!wishlist",
+              "Query.!categoryList",
+              "Mutation.!setPaymentMethodAndPlaceOrder",
+              "Mutation.!addBundleProductsToCart",
+              "Mutation.!addConfigurableProductsToCart",
+              "Mutation.!addDownloadableProductsToCart",
+              "Mutation.!addSimpleProductsToCart",
+              "Mutation.!addVirtualProductsToCart",
+              "Mutation.!createCustomer",
+              "Mutation.!updateCustomer"
+            ]
           }
-        ],
-        "handler": {
-          "graphql": {
-            "endpoint": "https://rickandmortyapi.com/graphql"
-          }
-        }
+        }]
       }
     ]
   }

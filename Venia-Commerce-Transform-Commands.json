@@ -1,0 +1,38 @@
+{
+    products(filter:{category_id:{eq:"2"}}, pageSize:3){
+      total_count
+      items{
+        name
+        description{
+          html
+        }
+      }
+    }
+    availableStores(useCurrentGroup:false){
+      store_name
+      website_code
+      website_name
+    }
+    GetV1ApplepayAuth{
+      ... on pay_pal_braintree_data_auth_data_interface{
+        display_name
+        client_token
+        action_success
+        logged_in
+        store_code
+      }
+    }
+    GetV1DirectoryCountriesCountryId(countryId:"US"){
+      ... on directory_data_country_information_interface2{
+        id
+        two_letter_abbreviation
+        three_letter_abbreviation
+        full_name_english
+        available_regions{
+          name
+          id
+          code
+        }
+      }
+    }
+  }

@@ -7,5 +7,10 @@
       url_key
     }
   }
+  availableStores(useCurrentGroup:false){
+    store_name
+    website_code
+    website_name
+  }
 }
 
