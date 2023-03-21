@@ -1,0 +1,22 @@
+{
+    products(search: "a") {
+        items {
+            sku
+            special_price 
+            ... on SimpleProduct {
+                price_range {
+                    minimum_price {
+                        regular_price {
+                            value
+                        }
+                    }
+                }
+                demoDetails {
+                    sku
+                    price
+                    ziocode
+                }
+            }
+        }
+    }
+}
