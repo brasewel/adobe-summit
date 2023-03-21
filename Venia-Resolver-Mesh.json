@@ -2,7 +2,7 @@
     "meshConfig": {
         "sources": [
             {
-                "name": "MagentoMonolithApi",
+                "name": "Venia",
                 "handler": {
                     "graphql": {
                         "endpoint": "https://venia.magento.com/graphql"
@@ -10,7 +10,7 @@
                 }
             },
             {
-                "name": "Pricing",
+                "name": "RuntimePricing",
                 "handler": {
                     "JsonSchema": {
                         "baseUrl": "https://adobeioruntime.net/api/v1/web/283976-319tealcat-stage/default",
