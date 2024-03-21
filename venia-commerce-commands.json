@@ -1,0 +1,28 @@
+{
+  products(search: "a", pageSize: 3, currentPage: 1) {
+    items {
+      uid
+      name
+      sku
+      url_key
+    }
+  }
+  availableStores(useCurrentGroup:false){
+    store_name
+    website_code
+    website_name
+  }
+  GetV1DirectoryCountriesCountryId(countryId:"US"){
+    ... on directory_data_country_information_interface2{
+      id
+      two_letter_abbreviation
+      three_letter_abbreviation
+      full_name_english
+      available_regions{
+        name
+        id
+        code
+      }
+    }
+  }
+}
